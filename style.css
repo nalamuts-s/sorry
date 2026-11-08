@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #050d3d;
+  --lavender: #c8ccff;
+  --white: #f6f3ff;
+}
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 48px 22px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: appear .8s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Allura", cursive;
+  font-size: clamp(58px, 10vw, 100px);
+  font-weight: 400;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 15px;
+}
+
+.illustration {
+  position: relative;
+  width: 260px;
+  height: 245px;
+  margin: 35px auto;
+  display: grid;
+  place-items: center;
+}
+
+.crying-cat {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+.flower {
+  position: absolute;
+  font-size: 35px;
+  color: #f4c5e4;
+  z-index: 2;
+}
+
+.f1 { top: 18px; left: 34px; }
+.f2 { top: 48px; right: 22px; color: #f4d66c; }
+.f3 { bottom: 35px; left: 12px; color: #a9cfff; }
+.f4 { bottom: 15px; right: 34px; color: #eab5ec; }
+
+@keyframes float {
+  50% { transform: translateY(-9px); }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pill-button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: #10143d;
+  padding: 12px 24px;
+  min-width: 160px;
+  font-size: 15px;
+  transition: .3s;
+}
+
+.pill-button:hover {
+  transform: translateY(-3px);
+  background: #e0e1ff;
+}
+
+.envelope {
+  position: relative;
+  width: 230px;
+  height: 155px;
+  border: 0;
+  border-radius: 8px;
+  background: #596b9b;
+  box-shadow: 0 18px 45px #0007;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 115px solid transparent;
+  border-right: 115px solid transparent;
+  border-top: 88px solid #aab5d5;
+  transform-origin: top;
+  transition: transform .7s;
+}
+
+.letter-peek {
+  position: absolute;
+  z-index: 1;
+  font-size: 58px;
+  left: 50%;
+  top: 34px;
+  transform: translateX(-50%);
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.hint {
+  margin-top: 28px;
+  opacity: .8;
+}
+
+h2 {
+  font-family: "Allura", cursive;
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.vinyl {
+  position: relative;
+  margin-top: 35px;
+  width: 190px;
+  height: 190px;
+  padding: 0;
+  overflow: hidden;
+  border: 5px solid #d8edff;
+  border-radius: 18px;
+  background: #d8edff;
+  box-shadow: 0 10px 30px #0005;
+  display: grid;
+  place-items: center;
+  transition: box-shadow .25s, transform .25s;
+}
+
+.vinyl img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vinyl.spinning {
+  animation: spin 7s linear infinite;
+  box-shadow: 0 0 25px #8dcaff99;
+}
+
+.play-indicator {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f6faffdd;
+  color: #176bb2;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.vinyl-caption {
+  font-size: 12px;
+  opacity: .8;
+  margin: 14px 0 28px;
+}
+
+.letter-paper {
+  width: min(100%, 690px);
+  text-align: left;
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.letter-paper p {
+  margin-bottom: 22px;
+}
+
+.signature {
+  font-family: "Allura", cursive;
+  font-size: 34px;
+  text-align: right;
+}
+
+.interlude p {
+  max-width: 650px;
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1.55;
+}
+
+.interlude button {
+  position: absolute;
+  bottom: 9%;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 16px;
+  padding: 12px 22px;
+}
+
+@media (max-width: 600px) {
+  .screen { padding: 34px 20px; }
+  .letter-paper { font-size: 15px; line-height: 1.8; }
+  h2 { font-size: 56px; }
+}

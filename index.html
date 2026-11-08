@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Letter for Cumii</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="site">
+
+    <section class="screen active" id="welcome">
+      <p class="eyebrow">A little letter, from the heart</p>
+      <h1>A Truth You Deserve</h1>
+      <p class="subtitle">When words are meant to unfold</p>
+
+      <div class="illustration">
+        <span class="flower f1">✿</span>
+        <span class="flower f2">✿</span>
+        <span class="flower f3">✿</span>
+        <span class="flower f4">✿</span>
+        <img class="crying-cat" src="crying-cat.png" 
+      </div>
+
+      <button class="pill-button" data-next="envelope">
+        Start ♡
+      </button>
+    </section>
+
+    <section class="screen" id="envelope">
+      <button class="envelope" id="openEnvelope" aria-label="Buka amplop">
+        <span class="flap"></span>
+        <span class="letter-peek">💌</span>
+      </button>
+      <p class="hint">Tap the envelope to continue</p>
+    </section>
+
+    <section class="screen" id="letter">
+      <p class="eyebrow">A note for you</p>
+      <h2>For Cumii ♡</h2>
+      <p class="subtitle">Some words I wanted you to hear</p>
+
+      <button class="vinyl" id="vinyl" type="button" aria-label="Putar atau jeda lagu" aria-pressed="false">
+        <img src="blue-white-photo.jpg" alt="Artwork biru putih Wave to Earth">
+        <span class="play-indicator" aria-hidden="true">▶</span>
+      </button>
+
+      <audio id="letterSong" src="Lootus.mp3" preload="metadata"></audio>
+      <p class="vinyl-caption" id="musicCaption">Tap gambar untuk memutar lagu ♡</p>
+
+      <article class="letter-paper">
+        <p>haii haloww (◕ᴗ◕✿)</p>
+
+        <p>
+          mas, maaf ya buat sikap aku tadi, kemarin, dan sebelumnya.
+          aku sadar mungkin caraku nanggepin semuanya terlalu berlebihan,
+          dari nanggepin pesanmu cuma pakai stiker ataupun hal-hal yang
+          ada di saluran ku. aku cuma terlalu kebawa emosi sampai nggak
+          mikirin perasaanmu juga (´ . .̫ . `).
+        </p>
+
+        <p>
+          aku juga nggak bermaksud bikin cumii jadi serba salah atau
+          ngerasa kalau apa pun yang cumii lakuin selalu salah di mata
+          aku •́ ‿ ,•̀. tadi dan kemarin aku lagi nggak bisa ngontrol
+          diriku sendiri, aku terlalu mengikuti emosiku sampai akhirnya
+          ngambil keputusan yang mungkin nyakitin cumii.
+        </p>
+
+        <p>
+          aku masih belajar buat ngontrol semuanya. sekali lagi,
+          nala minta maaf ya cumii kalau sikap nala bikin cumii
+          ngerasa nggak nyaman 😿😞💐
+        </p>
+
+        <p class="signature">— nala</p>
+      </article>
+
+      <button class="pill-button" data-next="pause1">
+        Continue
+      </button>
+    </section>
+
+    <section class="screen interlude" id="pause1">
+      <p>This message doesn't mean you have to answer right away...</p>
+      <button data-next="pause2">Continue</button>
+    </section>
+
+    <section class="screen interlude" id="pause2">
+      <p>Take all the time you need to read and understand it...</p>
+      <button data-next="pause3">Continue</button>
+    </section>
+
+    <section class="screen interlude" id="pause3">
+      <p>I just wanted to say what I should have said...</p>
+      <button data-next="thanks">Continue</button>
+    </section>
+
+    <section class="screen interlude" id="thanks">
+      <p>Thank you for reading. ♡</p>
+      <button data-next="welcome">Back to the beginning</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
